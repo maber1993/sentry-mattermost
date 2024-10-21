@@ -19,7 +19,7 @@
 # THE SOFTWARE.
 
 import json
-import urllib
+import urllib3
 import operator
 
 from django import forms
