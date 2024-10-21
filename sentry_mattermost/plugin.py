@@ -19,7 +19,7 @@
 # THE SOFTWARE.
 
 import json
-import urllib2
+import urllib
 import operator
 
 from django import forms
@@ -89,8 +89,9 @@ class PayloadFactory:
 
 def request(url, payload):
     data = "payload=" + json.dumps(payload)
-    req = urllib2.Request(url, data)
-    response = urllib2.urlopen(req)
+    #req = urllib.Request(url, data)
+    #response = urllib.urlopen(req)
+    response=urllib3.request(method="POST", url=url, body=data)
     return response.read()
 
 
